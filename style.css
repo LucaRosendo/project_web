@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+.colunas{
+    background-color: rgb(19, 184, 184);
+    column-count: 3;
+    column-rule: 2px solid rgb(24, 77, 95);
+    width: 100%;
+    border-radius: 8px;
+}
+
+.header{
+    background-color: rgb(90, 165, 190);
+    text-align: center;
+    padding: 3vh;
+}
+
+.form{
+    padding: 10px;
+}
+
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label{
+    display: inline-block;
+    margin-bottom: 5px;
+}   
