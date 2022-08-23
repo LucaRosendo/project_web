@@ -47,11 +47,22 @@ body{
     padding: 3vh;
 }
 
+.divbut{
+    flex-direction: row;
+    justify-content: space-evenly;
+    display: flex;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+}
+
 .afazer_fazendo_concluido{
     background-color: white;
-    margin: 0.5vh;
-    height: 3vh;
+    height: 4vh;
     border: white solid 2px;
+    width: 100%;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    border-radius: 0.7vh;
 }
 
 .button{
@@ -71,4 +82,17 @@ body{
     border: white solid 2px;
     border-radius: 4px;
     margin: 2vh;
+}
+
+.but_e_o{
+    height: 3vh;
+    width: 45%;
+    margin: 1vh;
+    border: white solid 1px;
+    border-radius: 0.7vh;
+    align-content: center;
+}
+
+.forms{
+    height: 5vh;
 }

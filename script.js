@@ -1,6 +1,6 @@
-let colunaAFazer = [];
-let colunaFazendo = [];
-let colunaConcluida = [];
+let iniciado = [];
+let concluindo = [];
+let concluido = [];
 
 var coluna1 = document.getElementById('coluna1');
 var coluna2 = document.getElementById('coluna2');
@@ -14,8 +14,8 @@ function adicionarcard(id) {
   card.setAttribute("id", "card" + i);
   card.setAttribute("class", 'cards');
 
-  let tex = document.createElement("h5")
-  let cont = document.createTextNode("Descreva sua tarefa:")
+  let tex = document.createElement("h4")
+  let cont = document.createTextNode("Dê um título a sua tarefa:")
   tex.style.color = "black"
   tex.style.marginLeft = "1vh"
   tex.style.marginTop = "2vh"
@@ -23,28 +23,40 @@ function adicionarcard(id) {
   card.appendChild(tex)
 
   let inp = document.createElement("input")
-  inp.setAttribute("placeholder", "Insira aqui sua tarefa. ");
+  inp.setAttribute("placeholder", "  Insira aqui o nome...");
   inp.setAttribute("id", "input" + i);
+  inp.setAttribute("class", "forms");
   inp.style.width = "35vh";
   inp.style.marginLeft = "1vh";
   inp.style.marginTop = "2vh";
   card.appendChild(inp);
 
+  let tex1 = document.createElement("h4")
+  let cont1 = document.createTextNode("Descreva sua tarefa:")
+  tex1.style.color = "black"
+  tex1.style.marginLeft = "1vh"
+  tex1.style.marginTop = "2vh"
+  tex1.appendChild(cont1)
+  card.appendChild(tex1)
+
+  let inp1 = document.createElement("input")
+  inp1.setAttribute("placeholder", "  Insira aqui a descriçaõ...");
+  inp1.setAttribute("id", "input" + i);
+  inp1.setAttribute("class", "forms");
+  inp1.style.width = "35vh";
+  inp1.style.marginLeft = "1vh";
+  inp1.style.marginTop = "2vh";
+  card.appendChild(inp1);
+
   let but = document.createElement("button")
   let texTag = document.createTextNode("OK")
+  but.setAttribute('class', 'but_e_o');
   but.setAttribute("id", "button" + i)
   but.appendChild(texTag);
-  but.style.marginLeft = "1vh"
-  but.style.height = "3vh"
-  but.style.backgroundColor = "white"
-  but.style.border = "white solid 0vh"
 
   let butExcluir = document.createElement("button");
-  butExcluir.style.margin = "1vh"
+  butExcluir.setAttribute('class', 'but_e_o');
   butExcluir.textContent = "Excluir";
-  butExcluir.style.height = "3vh";
-  butExcluir.style.backgroundColor = "white";
-  butExcluir.style.border = "white solid 0vh";
 
   butExcluir.addEventListener("click", function() {
     card.remove();
@@ -52,78 +64,89 @@ function adicionarcard(id) {
 
   but.addEventListener("click", function() {
     let texto = inp.value;
-    let tagP = document.createElement("p");
+    let tagP = document.createElement("h3");
     tagP.style.marginLeft = "1vh";
-    tagP.style.color = "darkblue";
     let node = document.createTextNode(texto);
     tagP.appendChild(node)
     tex.remove();
     inp.remove();
-    but.remove();
     card.appendChild(tagP);
+    card.appendChild(document.createElement('br'));
+    let texto2 = inp1.value;
+    let tagP2 = document.createElement("p");
+    tagP2.style.marginLeft = "1vh";
+    let node2 = document.createTextNode(texto2);
+    tagP2.appendChild(node2)
+    tex1.remove();
+    inp1.remove();
+    but.remove();
+    card.appendChild(tagP2);
 
     let divButColunas = document.createElement("div");
-    divButColunas.style.display = "flex";
-    divButColunas.style.flexDirection = "row";
+    divButColunas.setAttribute('class', 'divbut')
 
-    let butAFazer = document.createElement("button");
-    butConcluido.setAttribute('class', 'afazer_fazendo_concluido');
+    let butiniciado = document.createElement("button");
+    butiniciado.setAttribute('class', 'afazer_fazendo_concluido');
 
-    let butFazendo = document.createElement("button");
-    butConcluido.setAttribute('class', 'afazer_fazendo_concluido');
+    let butconcluindo = document.createElement("button");
+    butconcluindo.setAttribute('class', 'afazer_fazendo_concluido');
 
-    let butConcluido = document.createElement("button");
-    butConcluido.setAttribute('class', 'afazer_fazendo_concluido');
+    let butconcluido = document.createElement("button");
+    butconcluido.setAttribute('class', 'afazer_fazendo_concluido');
 
-    butAFazer.textContent = "Fazer";
-    butFazendo.textContent = "Fazendo";
-    butConcluido.textContent = "Concluida";
+    butiniciado.textContent = "Fazer";
+    butconcluindo.textContent = "Fazendo";
+    butconcluido.textContent = "Concluida";
 
-    butAFazer.addEventListener("click", function() {
-      card.style.border = "white solid 1vh";
-      butAFazer.style.backgroundColor = "white";
-      butAFazer.style.border = "white solid 0vh";
-      butFazendo.style.backgroundColor = "white";
-      butFazendo.style.border = "white solid 0vh";
-      butConcluido.style.backgroundColor = "white";
-      butConcluido.style.border = "white solid 0vh";
-      butExcluir.style.border = "white solid 0vh";
+    butiniciado.addEventListener("click", function() {
+      card.style.border = "white solid 2px";
+
+      butiniciado.style.backgroundColor = "white";
+
+      butconcluindo.style.backgroundColor = "white";
+
+      butconcluido.style.backgroundColor = "white";
+
+      butconcluido.style.border = "white solid 0vh";
       butExcluir.style.backgroundColor = "white";
-      colunaAFazer.push(card)
+
+      iniciado.push(card)
       coluna1.appendChild(card);
     });
 
-    butFazendo.addEventListener("click", function() {
-      card.style.border = "#D8B4AD solid 1vh";
-      butAFazer.style.backgroundColor = "#D8B4AD";
-      butAFazer.style.border = "#D8B4AD solid 0vh";
-      butFazendo.style.backgroundColor = "#D8B4AD";
-      butFazendo.style.border = "#D8B4AD solid 0vh";
-      butConcluido.style.backgroundColor = "#D8B4AD";
-      butConcluido.style.border = "#D8B4AD solid 0vh";
-      butExcluir.style.border = "#D8B4AD solid 0vh";
-      butExcluir.style.backgroundColor = "#D8B4AD";
-      colunaFazendo.push(card)
+    butconcluindo.addEventListener("click", function() {
+      card.style.border = "#white solid 2px";
+
+      butiniciado.style.backgroundColor = "#white";
+
+      butconcluindo.style.backgroundColor = "#white";
+
+      butconcluido.style.backgroundColor = "#white";
+
+      butExcluir.style.backgroundColor = "#white";
+
+      concluindo.push(card)
       coluna2.appendChild(card);
     });
 
-    butConcluido.addEventListener("click", function() {
-      card.style.border = "white solid 1vh";
-      butAFazer.style.backgroundColor = "white";
-      butAFazer.style.border = "white solid 0vh";
-      butFazendo.style.backgroundColor = "white";
-      butFazendo.style.border = "white solid 0vh";
-      butConcluido.style.backgroundColor = "white";
-      butConcluido.style.border = "white solid 0vh";
-      butExcluir.style.border = "white solid 0vh";
+    butconcluido.addEventListener("click", function() {
+      card.style.border = "white solid 2px";
+
+      butiniciado.style.backgroundColor = "white";
+
+      butconcluindo.style.backgroundColor = "white";
+
+      butconcluido.style.backgroundColor = "white";
+      
       butExcluir.style.backgroundColor = "white";
-      colunaConcluida.push(card)
+
+      concluido.push(card)
       coluna3.appendChild(card);
     });
 
-    divButColunas.appendChild(butAFazer);
-    divButColunas.appendChild(butFazendo);
-    divButColunas.appendChild(butConcluido);
+    divButColunas.appendChild(butiniciado);
+    divButColunas.appendChild(butconcluindo);
+    divButColunas.appendChild(butconcluido);
     card.appendChild(divButColunas);
     console.log(card);
   });
@@ -134,18 +157,18 @@ function adicionarcard(id) {
   switch(id){
       case 1:
         coluna1.appendChild(card);
-        colunaAFazer.push(card);
-        console.log(colunaAFazer);
+        iniciado.push(card);
+        console.log(iniciado);
         break;
       case 2:
         coluna2.appendChild(card);
-        colunaFazendo.push(card);
-        console.log(colunaFazendo);
+        concluindo.push(card);
+        console.log(concluindo);
         break;
       case 3:   
         coluna3.appendChild(card);
-        colunaConcluida.push(card);
-        console.log(colunaConcluida);
+        concluido.push(card);
+        console.log(concluido);
         break;
   }
   
