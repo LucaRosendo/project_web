@@ -1,61 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+  </head>
+  <body>
     <div class="colunas">
-        <div class="coluna1">
-            <div class="header">
-                <h2>Iniciado</h2>
-            </div>
+      <div class="coluna1" id="coluna1">
+          <div class="header">
+              <h2>Iniciado</h2>
+          </div>
+          
+          <div class="button">
+            <button id="btncoluna1" class="botao" type="button" onclick="adicionarcard(1)">Adicionar</button>
+          </div>
+      </div>
 
-            <form id="fomulario" class="formulario">
-                <label for="nome">Nome do projeto</label><br>
-                <input type="text" id="nome" placeholder="Digite o nome do projeto"><br>
-                <label for="desc">Descrição do projeto</label><br>
-                <input type="text" id="desc" placeholder="Digite a descrição do projeto">
-            </form>
+      <div class="coluna2" id="coluna2">
+          <div class="header">
+              <h2>Concluindo</h2>
+          </div>
 
-            <button type="submit">Salvar</button>
-        </div>
+          <div class="button">
+            <button id="btncoluna2" class="botao" type="button" onclick="adicionarcard(2)">Adicionar</button>
+          </div>
+      </div>
 
-        <div class="coluna2">
-            <div class="header">
-                <h2>Concluindo</h2>
-            </div>
+      <div class="coluna3" id="coluna3">
+          <div class="header">
+              <h2>Concluído</h2>
+          </div>
 
-            <form id="fomulario" class="formulario">
-                <label for="nome">Nome do projeto</label><br>
-                <input type="text" id="nome" placeholder="Digite o nome do projeto"><br>
-                <label for="desc">Descrição do projeto</label><br>
-                <input type="text" id="desc" placeholder="Digite a descrição do projeto">
-            </form>
+          <div class="button">
+            <button id="btncoluna3" class="botao" type="button" onclick="adicionarcard(3)">Adicionar</button>
+          </div>
+      </div>
+  </div>
 
-            <button type="submit">Salvar</button>
-        </div>
-
-        <div class="coluna3">
-            <div class="header">
-                <h2>Concluído</h2>
-            </div>
-
-            <form id="fomulario" class="formulario">
-                <label for="nome">Nome do projeto</label><br>
-                <input type="text" id="nome" placeholder="Digite o nome do projeto"><br>
-                <label for="desc">Descrição do projeto</label><br>
-                <input type="text" id="desc" placeholder="Digite a descrição do projeto">
-            </form>
-
-            <button type="submit">Salvar</button>
-        </div>
-        
-    </div>
-
-    <script src="script.js"></script>
-</body>
+  <script src="script.js"></script>
+  </body>
 </html>

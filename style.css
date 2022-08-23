@@ -5,36 +5,70 @@
 }
 
 body{
-    width: 100%;
-    min-height: 100vh;
     display: flex;
+    background-color: rgb(19, 184, 184);
 }
 
 .colunas{
-    background-color: rgb(19, 184, 184);
-    column-count: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     column-rule: 2px solid rgb(24, 77, 95);
     width: 100%;
-    border-radius: 8px;
+    height: 100%;
+    padding-top: 3vh;
+}
+
+.coluna1{
+    border: white solid 2px;
+    width: 30%;
+    height: fit-content;
+    padding:  2vh;
+}
+
+.coluna2{
+    border: white solid 2px;
+    width: 30%;
+    height: fit-content;
+    padding:  2vh;
+}
+
+.coluna3{
+    border: white solid 2px;
+    width: 30%;
+    height: fit-content;
+    padding:  2vh;
 }
 
 .header{
+    padding: 1vh 1vh 1vh 1vh;
     background-color: rgb(90, 165, 190);
     text-align: center;
     padding: 3vh;
 }
 
-.form{
-    padding: 10px;
+.afazer_fazendo_concluido{
+    background-color: white;
+    margin: 0.5vh;
+    height: 3vh;
+    border: white solid 2px;
 }
 
-.form-control{
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    position: relative;
+.button{
+    margin-top: 2vh;
+    margin-left: 6vh;
 }
 
-.form-control label{
-    display: inline-block;
-    margin-bottom: 5px;
-}   
+.botao{
+    align-items: center;
+    width: 90%;
+    height: 6vh;
+}
+
+.cards{
+    width: 90%;
+    height: fit-content;
+    border: white solid 2px;
+    border-radius: 4px;
+    margin: 2vh;
+}
