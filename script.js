@@ -94,9 +94,9 @@ function adicionarcard(id) {
     let butconcluido = document.createElement("button");
     butconcluido.setAttribute('class', 'afazer_fazendo_concluido');
 
-    butiniciado.textContent = "Fazer";
-    butconcluindo.textContent = "Fazendo";
-    butconcluido.textContent = "Concluida";
+    butiniciado.textContent = "Iniciado";
+    butconcluindo.textContent = "Concluindo";
+    butconcluido.textContent = "Concluido";
 
     butiniciado.addEventListener("click", function() {
       card.style.border = "white solid 2px";
